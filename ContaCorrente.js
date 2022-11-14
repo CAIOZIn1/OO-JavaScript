@@ -1,6 +1,7 @@
 import Cliente from './Cliente.js'
 
 export default class ContaCorrente {
+    static numeroDeContas = 0 // -> o atributo static serve para referenciar que o estado não é único de apenas um obejto e sim do escopo todo
     agencia;
     _cliente;
     #saldo = 200;
@@ -25,6 +26,7 @@ export default class ContaCorrente {
     constructor (cliente, agencia) {
         this.cliente = cliente
         this.agencia = agencia
+        ContaCorrente.numeroDeContas += 1
     }
 
     sacar(valor) {

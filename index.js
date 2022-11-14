@@ -21,3 +21,4 @@ console.log(contaCorrenteAlice); //estrutura toda funcionando
 console.log(contaCorrenteAlice.cliente) // visualizar como funciona o elemento get com o atributo privado
 console.log(contaCorrenteAlice.saldo) // visualizar como funciona o elemento get com o atributo privado, mesmo com a tralha
 console.log(cliente2.cpf) // visualizar como funciona o elemento get com o atributo privado
+console.log(ContaCorrente.numeroDeContas) // visualizar o número de contas existentes no total
