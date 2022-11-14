@@ -1,5 +1,8 @@
 export default class ContaCorrente {
     agencia;
+    cliente;
+
+
     //a convesão para atributos privado é o _, ou seja, no nosso caso deveriamos utilizar _saldo. Não usei porque o meu não deu "erro" :^)
     #saldo = 200;
 
@@ -13,9 +16,14 @@ export default class ContaCorrente {
     }
 
     depositar(valor) {
-        if (valor > 0) return //-> para evitar muitos if's. Evitar uma identação muito alta
+        if (valor < 0) return //-> para evitar muitos if's. Evitar uma identação muito alta
         this.#saldo += valor;
-        // console.log(this.#saldo)
+        // console.log(this.saldo)
         //só consigo acessa-lo dentro da classe já que o mesmo é um atribubo privado pelo uso da tralha (#) antes da variável
+    }
+
+    transferir (valor, conta){
+        const valorSacado = this.sacar(valor)
+        conta.depositar(valorSacado)
     }
 }
